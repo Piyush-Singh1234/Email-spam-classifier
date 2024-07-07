@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import string
 import nltk
+import os
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
@@ -32,8 +33,13 @@ def transform_text(text):
 
     return " ".join(y)
 
-tfidf = pickle.load(open('vectorizer.pkl','rb'))
-model = pickle.load(open('model.pkl','rb'))
+script_dir = os.path.dirname(os.path.abspath(__file__))
+tfidf = pickle.load(open(os.path.join(script_dir, 'vectorizer.pkl'), 'rb'))
+model = pickle.load(open(os.path.join(script_dir, 'model.pkl'), 'rb'))
+
+
+# tfidf = pickle.load(open('vectorizer.pkl','rb'))
+# model = pickle.load(open('model.pkl','rb'))
 
 st.title("Email/SMS Spam Classifier")
 

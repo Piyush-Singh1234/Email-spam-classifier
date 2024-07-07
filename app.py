@@ -33,14 +33,12 @@ def transform_text(text):
 
     return " ".join(y)
 
-# script_dir = os.path.dirname(os.path.abspath(__file__))
-# tfidf = pickle.load(open(os.path.join(script_dir, 'vectorizer.pkl'), 'rb'))
-# model = pickle.load(open(os.path.join(script_dir, 'model.pkl'), 'rb'))
+# Get the directory path of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# tfidf = pickle.load(open(os.path.join(os.path.dirname(__file__), 'model', 'vectorizer.pkl'), 'rb'))
-
-tfidf = pickle.load(open(os.path.join(os.path.dirname(__file__), 'model', 'vectorizer.pkl'), 'rb'))
-tfidf = pickle.load(open(r'C:\Users\shash\OneDrive - iitgn.ac.in\spam\vectorizer.pkl', 'rb'))
+# Load the vectorizer and model
+tfidf = pickle.load(open(os.path.join(script_dir, 'vectorizer.pkl'), 'rb'))
+model = pickle.load(open(os.path.join(script_dir, 'model.pkl'), 'rb'))
 
 # tfidf = pickle.load(open('vectorizer.pkl','rb'))
 # model = pickle.load(open('model.pkl','rb'))
